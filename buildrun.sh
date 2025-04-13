@@ -55,6 +55,7 @@ echo "Project Name: $PROJECT_NAME"
 
 # Define build path based on environment
 BUILD_PATH="$PROJECT_DIR/cmake-build-debug/"
+EXECUTABLE_NAME="SudokuProject"
 
 # Determine OS and run the executable accordingly, passing any additional arguments
 OS="$(uname)"
@@ -72,8 +73,8 @@ if [[ "$OS" == "Linux" || "$OS" == "Darwin" ]]; then
         exit 1
     fi
 elif [[ $OS =~ MINGW || $OS =~ CYGWIN || $OS =~ MSYS ]]; then
-    if [[ -f "$BUILD_PATH/Debug/$PROJECT_NAME.exe" ]]; then
-        "$BUILD_PATH/Debug/$PROJECT_NAME.exe" "$@"
+    if [[ -f "$BUILD_PATH/Debug/$EXECUTABLE_NAME.exe" ]]; then
+        "$BUILD_PATH/Debug/$EXECUTABLE_NAME.exe" "$@"
     else
         echo "Error: Executable not found in $BUILD_PATH/Debug"
         exit 1
