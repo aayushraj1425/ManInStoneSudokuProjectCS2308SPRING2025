@@ -107,6 +107,11 @@ tuple<int, int, int> findNextCell(int **BOARD)
             }
         }
     }
+
+    // If no empty cell is found, return {-1, -1, 0}
+    if (bestRow == -1 && bestCol == -1)
+        return {-1, -1, 0};
+
     return {bestRow, bestCol, minOptions}; // Return the best cell and its options
 }
 
