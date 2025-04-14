@@ -81,19 +81,19 @@ You will find `TODO` comments in the following files:
          - [ ] Delete `empty_boxes` cells using `deleteRandomItems()`.
          - [ ] Return the final Sudoku board.
 
-2. **`utils.cpp` / `utils.h`**
+✅ 2. **`utils.cpp` / `utils.h`**
    - **Header File (`utils.h`)**
-     - [ ] Provide function prototypes for all functions in `utility.cpp`.
-     - [ ] Add appropriate docstrings for each function prototype based on examples in the code.
+     - ✅ Provide function prototypes for all functions in `utility.cpp`.
+     - ✅ Add appropriate docstrings for each function prototype based on examples in the code.
 
    - **CPP File (`utils.cpp`)**
 
      - **`deallocateBoard(int** BOARD, const int& rows)`**
-         - [ ] Implement memory deallocation for the 2D `BOARD`.
-         - [ ] Check if `BOARD` is `nullptr` before deallocating.
-         - [ ] Iterate through each row and deallocate using `delete[]`.
-         - [ ] Deallocate the array of row pointers using `delete[]`.
-         - [ ] Set `BOARD` to `nullptr` to avoid dangling pointers.
+         - ✅ Implement memory deallocation for the 2D `BOARD`.
+         - ✅ Check if `BOARD` is `nullptr` before deallocating.
+         - ✅ Iterate through each row and deallocate using `delete[]`.
+         - ✅ Deallocate the array of row pointers using `delete[]`.
+         - ✅ Set `BOARD` to `nullptr` to avoid dangling pointers.
 
      - **`createFolder(const std::string& folderPath)`**
          - ✅ Already implemented — no changes needed.
