@@ -88,15 +88,15 @@ tuple<int, int, int> findNextCell(int **BOARD)
         for (int c = 0; c < 9; c++)
         {
             if (BOARD[r][c] == 0)
-            {                    
+            {
                 int options = 0;
                 for (int k = 0; k < 9; k++)
                 {
-                    if (isValid(BOARD, r, c, k)) // Count valid numbers for this cell
-                        options++;
+                    if (isValid(BOARD, r, c, k))
+                        options++; // Count valid numbers for this cell
                 }
-                if (options < minOptions) //Early exit for single option
-                { 
+                if (options < minOptions) // Early exit for single option
+                {
                     minOptions = options;
                     bestRow = r;
                     bestCol = c;
@@ -120,7 +120,7 @@ bool solveBoardEfficient(int **BOARD)
     for (int k = 1; k <= 9; k++)
     {
         if (isValid(BOARD, row, col, k)) // Check if placing 'k' is a valid solution
-        {                        
+        {
             BOARD[row][col] = k; // Place the number
 
             if (solveBoardEfficient(BOARD))
