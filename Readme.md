@@ -110,10 +110,10 @@ You will find `TODO` comments in the following files:
          - Constructs a filename with leading zeros based on the `index` and appends `.txt`.
          - Example Output: `data/puzzles/0005_puzzle.txt`
 
-3. **`sudoku.cpp` / `sudoku.h`**
+✅ 3. **`sudoku.cpp` / `sudoku.h`**
    - **Header File (`sudoku.h`)**
-     - [ ] Provide function prototypes for all functions in `sudoku.cpp`.
-     - [ ] Add appropriate docstrings for each function prototype based on examples in the code.
+     - ✅ Provide function prototypes for all functions in `sudoku.cpp`.
+     - ✅ Add appropriate docstrings for each function prototype based on examples in the code.
 
    - **CPP File (`sudoku.cpp`)**
 
@@ -126,21 +126,21 @@ You will find `TODO` comments in the following files:
          - Solves the Sudoku board using a simple backtracking algorithm.
 
      - **`findNextCell(int** BOARD)`**
-         - [ ] Implement logic to find the next empty cell using the Minimum Remaining Value (MRV) heuristic.
-         - [ ] Iterate over the board and count valid options for each empty cell using `isValid()`.
-         - [ ] Return the cell with the fewest valid options (`row`, `col`, `options`).
-         - [ ] Implement early exit if a cell with only one valid option is found.
+         - ✅ Implement logic to find the next empty cell using the Minimum Remaining Value (MRV) heuristic.
+         - ✅ Iterate over the board and count valid options for each empty cell using `isValid()`.
+         - ✅ Return the cell with the fewest valid options (`row`, `col`, `options`).
+         - ✅ Implement early exit if a cell with only one valid option is found.
 
      - **`solveBoardEfficient(int** BOARD)`**
-         - [ ] Implement efficient Sudoku solving using backtracking combined with the MRV heuristic.
-         - [ ] Use `findNextCell()` to select the next cell with the fewest valid options.
-         - [ ] Apply recursive backtracking to solve the board.
-         - [ ] Implement proper backtracking by resetting cells to `0` when needed.
+         - ✅ Implement efficient Sudoku solving using backtracking combined with the MRV heuristic.
+         - ✅ Use `findNextCell()` to select the next cell with the fewest valid options.
+         - ✅ Apply recursive backtracking to solve the board.
+         - ✅ Implement proper backtracking by resetting cells to `0` when needed.
 
      - **`solve(int** board, const bool& efficient)`**
-         - [ ] Implement logic to choose between the basic and efficient solver.
-         - [ ] Call `solveBoardEfficient()` if `efficient == true`.
-         - [ ] Otherwise, use the basic `solveBoard()` function.
+         - ✅ Implement logic to choose between the basic and efficient solver.
+         - ✅ Call `solveBoardEfficient()` if `efficient == true`.
+         - ✅ Otherwise, use the basic `solveBoard()` function.
 
 4. **`sudoku_io.cpp` / `sudoku_io.h`**
    - **Header File (`sudoku_io.h`)**
