@@ -24,7 +24,13 @@
 using namespace std;
 
 /**
-  * TODO: Provide appropriate Documentation, see other examples provided within the projects
+ * @brief Deallocates the memory reserved for the Sudoku board.
+ *
+ * Checks if the board is not nullptr before deallocating.
+ * Sets the board pointer to nullptr.
+ *
+ * @param BOARD The pointer to the 2D Sudoku board.
+ * @param rows The number of rows in the board (default is 9).
   */
 void deallocateBoard(int** BOARD, const int& rows = 9);
 
