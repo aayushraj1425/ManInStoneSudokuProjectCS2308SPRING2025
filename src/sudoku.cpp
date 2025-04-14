@@ -135,5 +135,5 @@ bool solveBoardEfficient(int **BOARD)
 bool solve(int **board, const bool &efficient)
 {
     // Choose the solving method based on the 'efficient' flag
-    return (solveBoardEfficient(board)) ? solveBoardEfficient(board) : solveBoard(board, 0, 0);
+    return (efficient) ? solveBoardEfficient(board) : solveBoard(board, 0, 0);
 }
