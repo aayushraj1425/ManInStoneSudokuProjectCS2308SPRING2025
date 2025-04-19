@@ -159,22 +159,6 @@ vector<string> getAllSudokuInFolder(const string& folderPath){
 }
 
 void createAndSaveNPuzzles(const int& num_puzzles, const int& complexity_empty_boxes, const string& destination, const string& prefix){
-    /**
-     * TODO:
-     * - Identify where in this function dynamically allocated memory (e.g., Sudoku boards) should be deallocated.
-     * - Use the `deallocateBoard()` function to free memory when:
-     *   1. The board is no longer needed (e.g., after solving or processing).
-     *   2. Before reassigning a pointer to a new board to avoid memory leaks.
-     *   3. Before returning from the function to ensure all allocated memory is freed.
-     *
-     * Example:
-     *   deallocateBoard(BOARD);  // Free memory allocated for the board
-     *
-     * Hints:
-     * - Always deallocate after you're done using the board.
-     * - Be mindful of potential memory leaks if the board isn't deallocated properly.
-     * - Set the pointer to nullptr after deallocation to avoid dangling pointers.
-     */
     int total_success = 0;
     for(int i=0; i < num_puzzles; i++){
         int** BOARD = generateBoard(complexity_empty_boxes);
@@ -185,6 +169,7 @@ void createAndSaveNPuzzles(const int& num_puzzles, const int& complexity_empty_b
         }else{
             cout << "!! Failed to write(" << filename << ") "<< total_success << "of " << num_puzzles << endl;
         }
+        deallocateBoard(BOARD);
     }
     cout << total_success << " files written out of " << num_puzzles <<endl;
 }
@@ -206,22 +191,6 @@ void displayProgressBar(int current, int total, int barWidth = 50) {
 }
 
 void solveAndSaveNPuzzles(const int &num_puzzles, const string& source, const string& destination, const string& prefix){
-    /**
-      * TODO:
-      * - Identify where in this function dynamically allocated memory (e.g., Sudoku boards) should be deallocated.
-      * - Use the `deallocateBoard()` function to free memory when:
-      *   1. The board is no longer needed (e.g., after solving or processing).
-      *   2. Before reassigning a pointer to a new board to avoid memory leaks.
-      *   3. Before returning from the function to ensure all allocated memory is freed.
-      *
-      * Example:
-      *   deallocateBoard(BOARD);  // Free memory allocated for the board
-      *
-      * Hints:
-      * - Always deallocate after you're done using the board.
-      * - Be mindful of potential memory leaks if the board isn't deallocated properly.
-      * - Set the pointer to nullptr after deallocation to avoid dangling pointers.
-      */
     int total_success_solve = 0;
     int total_success_write = 0;
     vector<string> path_to_sudokus = getAllSudokuInFolder(source);
@@ -242,6 +211,7 @@ void solveAndSaveNPuzzles(const int &num_puzzles, const string& source, const st
                 cout << "Puzzle Solved Written(over total): " << total_success_write << "/" << num_puzzles << endl;
             }
         }
+        deallocateBoard(sudoku);
     }
 }
 
@@ -267,22 +237,6 @@ int** deepCopyBoard(int** original) {
 }
 
 void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes) {
-    /**
-     * TODO:
-     * - Identify where in this function dynamically allocated memory (e.g., Sudoku boards) should be deallocated.
-     * - Use the `deallocateBoard()` function to free memory when:
-     *   1. The board is no longer needed (e.g., after solving or processing).
-     *   2. Before reassigning a pointer to a new board to avoid memory leaks.
-     *   3. Before returning from the function to ensure all allocated memory is freed.
-     *
-     * Example:
-     *   deallocateBoard(BOARD);  // Free memory allocated for the board
-     *
-     * Hints:
-     * - Always deallocate after you're done using the board.
-     * - Be mindful of potential memory leaks if the board isn't deallocated properly.
-     * - Set the pointer to nullptr after deallocation to avoid dangling pointers.
-     */
     double totalTimeSolveBoard = 0.0;
     double totalTimeEfficientSolveBoard = 0.0;
 
@@ -337,6 +291,8 @@ void compareSudokuSolvers(const int& experiment_size, const int& empty_boxes) {
 
         // -------------------- Progress Bar Update --------------------
         displayProgressBar(i, experiment_size);
+        deallocateBoard(board1);
+        deallocateBoard(board2);
     }
 
     cout << endl;  // Move to the next line after progress bar is done.
